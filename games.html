@@ -75,7 +75,7 @@
     // Function to fetch the games from the PHP API
     async function fetchGames() {
       try {
-        const response = await fetch('https://techinsider.free.nf/api/games_api.php');
+        const response = await fetch('https://cors-anywhere.herokuapp.com/http://techinsider.free.nf/api/games_api.php");
         const games = await response.json(); 
 
 
