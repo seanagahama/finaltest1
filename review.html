@@ -1,24 +1,41 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Submit a Review | Game & Tech Insider</title>
+  <title>Game & Tech Insider | Gaming Hub</title>
   <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
+   <header>
     <h1>Game & Tech Insider</h1>
-    <nav>
-      <ul class="main-menu">
-        <li><a href="games.html">Gaming</a></li>
-        <li><a href="consoles.html">Consoles</a></li>
-        <li><a href="tech.html">Tech Gadgets</a></li>
-        <li><a href="#">Upcoming Releases</a></li>
-        <li><a href="review.html">Reviews</a></li> <!-- New review tab link -->
-      </ul>
-    </nav>
+    <p>Your ultimate source for gaming and technology news</p>
   </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <!-- Dropdown Menu -->
+      <li class="dropdown">
+        <a href="#">Categories</a>
+        <div class="dropdown-content">
+          <a href="#">Gaming</a>
+          <a href="#">Tech Gadgets</a>
+          <a href="#">Consoles</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+      <input type="text" id="searchInput" placeholder="Search articles..." />
+    </section>
 
   <main class="content">
     <a href="index.html" class="back-home">← Back to Homepage</a>
