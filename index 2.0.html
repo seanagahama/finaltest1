@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game & Tech Insider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      position: relative;
+      padding: 14px 16px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    nav ul li a:hover {
+      background-color: #111;
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #111;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .search-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #searchInput {
+      padding: 10px 15px;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid #000;
+      border-radius: 5px;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 8px;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .feature-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .feature {
+      background-color: #fff;
+      padding: 20px;
+      flex: 1 1 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .feature img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .feature h3 {
+      margin-top: 10px;
+      color: #ff0000;
+    }
+
+    .contact-section {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .contact-section form input,
+    .contact-section form textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 2px solid #000;
+      border-radius: 5px;
+    }
+
+    .contact-section form button {
+      padding: 10px 20px;
+      background-color: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-section form button:hover {
+      background-color: #c10000;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Game & Tech Insider</h1>
+    <p>Your ultimate source for gaming and technology news</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <!-- Dropdown Menu -->
+      <li class="dropdown">
+        <a href="#">Categories</a>
+        <div class="dropdown-content">
+          <a href="#">Gaming</a>
+          <a href="#">Tech Gadgets</a>
+          <a href="#">Consoles</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+      <input type="text" id="searchInput" placeholder="Search articles..." />
+    </section>
+
+    <!-- Image Carousel -->
+    <section class="carousel-section">
+      <div class="carousel">
+        <img src="https://placehold.co/600x300?text=Console+Wars" alt="Console Wars">
+        <img src="https://placehold.co/600x300?text=Tech+on+the+Rise" alt="Tech on the Rise">
+        <img src="https://placehold.co/600x300?text=Release+Radar" alt="Release Radar">
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="feature-section">
+      <article class="feature">
+        <img src="https://placehold.co/400x200?text=Console+Wars" alt="Console Wars">
+        <h3>Console Wars</h3>
+        <p>The latest battles between PlayStation, Xbox, and Nintendo. Stay ahead of the competition!</p>
+      </article>
+
+      <article class="feature">
+        <img src="https://placehold.co/400x200?text=Tech+on+the+Rise" alt="Tech on the Rise">
+        <h3>Tech on the Rise</h3>
+        <p>Discover cutting-edge gadgets and innovations shaping tomorrow's world.</p>
+      </article>
+
+      <article class="feature">
+        <img src="https://placehold.co/400x200?text=Release+Radar" alt="Release Radar">
+        <h3>Release Radar</h3>
+        <p>Be the first to know about upcoming game and device releases with our exclusive scoops.</p>
+      </article>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+      <form action="contact.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required /><br>
+        <input type="email" name="email" placeholder="Your Email" required /><br>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Game & Tech Insider. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Carousel Script
+    const carouselImages = document.querySelectorAll('.carousel img');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      carouselImages.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % carouselImages.length;
+      showSlide(currentIndex);
+    }
+
+    showSlide(currentIndex);
+    setInterval(nextSlide, 3000); // change every 3 seconds
+
+    // Search Filter Script
+    const searchInput = document.getElementById('searchInput');
+    const features = document.querySelectorAll('.feature');
+
+    searchInput.addEventListener('input', function () {
+      const query = searchInput.value.toLowerCase();
+      features.forEach(feature => {
+        const title = feature.querySelector('h3').textContent.toLowerCase();
+        feature.style.display = title.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
