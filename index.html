@@ -2,128 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game & Tech Insider</title>
-  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <header>
     <h1>Game & Tech Insider</h1>
-    <nav>
-      <ul class="main-menu">
-        <li>
-          <a href="games.html">Gaming</a>
-          <ul class="dropdown">
-            <li><a href="">PC Games</a></li>
-            <li><a href="#">Mobile Games</a></li>
-            <li><a href="#">eSports</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="consoles.html">Consoles</a>
-          <ul class="dropdown">
-            <li><a href="#">PlayStation</a></li>
-            <li><a href="#">Xbox</a></li>
-            <li><a href="#">Nintendo</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="tech.html">Tech Gadgets</a>
-          <ul class="dropdown">
-            <li><a href="#">Smartphones</a></li>
-            <li><a href="#">Wearables</a></li>
-            <li><a href="#">Accessories</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Upcoming Releases</a>
-          <ul class="dropdown">
-            <li><a href="#">Games</a></li>
-            <li><a href="#">Consoles</a></li>
-            <li><a href="#">Gadgets</a></li>
-          </ul>
-        </li>
-        <!-- New Reviews Tab -->
-        <li>
-          <a href="review.html">Reviews</a>
-        </li>
-      </ul>
-    </nav>
+    <p>Your ultimate source for gaming and technology news</p>
   </header>
 
-  <main class="content">
-    <section class="feature-section">
-      <!-- FEATURE 1 -->
-      <div class="feature">
-        <h3>Console Wars</h3>
-        <img src="https://placehold.co/300x200" alt="Gaming Console">
-        <p>Discover the latest showdowns between PlayStation, Xbox, and Nintendo.</p>
-      </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
 
-      <!-- FEATURE 2 -->
-      <div class="feature">
-        <h3>Tech on the Rise</h3>
-        <img src="https://placehold.co/300x200" alt="Tech Gadget">
-        <p>Explore the hottest tech gadgets revolutionizing daily life.</p>
-      </div>
+      <!-- Dropdown Menu -->
+      <li class="dropdown">
+        <a href="#">Categories</a>
+        <div class="dropdown-content">
+          <a href="#">Gaming</a>
+          <a href="#">Tech Gadgets</a>
+          <a href="#">Consoles</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
 
-      <!-- FEATURE 3 -->
-      <div class="feature">
-        <h3>Release Radar</h3>
-        <img src="https://placehold.co/300x200" alt="Upcoming Releases">
-        <p>Stay ahead with sneak peeks at the most anticipated launches.</p>
-        <p id="countdown" style="font-weight: bold; color: #c10000;"></p>
+  <main>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+      <input type="text" id="searchInput" placeholder="Search articles..." />
+    </section>
+
+    <!-- Image Carousel -->
+    <section class="carousel-section">
+      <div class="carousel">
+        <img src="https://placehold.co/600x300?text=Console+Wars" alt="Console Wars">
+        <img src="https://placehold.co/600x300?text=Tech+on+the+Rise" alt="Tech on the Rise">
+        <img src="https://placehold.co/600x300?text=Release+Radar" alt="Release Radar">
       </div>
     </section>
+
+    <!-- Features -->
+    <section class="feature-section">
+      <article class="feature">
+        <img src="https://placehold.co/400x200?text=Console+Wars" alt="Console Wars">
+        <h3>Console Wars</h3>
+        <p>The latest battles between PlayStation, Xbox, and Nintendo. Stay ahead of the competition!</p>
+      </article>
+
+      <article class="feature">
+        <img src="https://placehold.co/400x200?text=Tech+on+the+Rise" alt="Tech on the Rise">
+        <h3>Tech on the Rise</h3>
+        <p>Discover cutting-edge gadgets and innovations shaping tomorrow's world.</p>
+      </article>
+
+      <article class="feature">
+        <img src="https://placehold.co/400x200?text=Release+Radar" alt="Release Radar">
+        <h3>Release Radar</h3>
+        <p>Be the first to know about upcoming game and device releases with our exclusive scoops.</p>
+      </article>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+      <form action="contact.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required /><br>
+        <input type="email" name="email" placeholder="Your Email" required /><br>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
   </main>
 
   <footer>
-    <section class="about-us">
-      <h2>About Us</h2>
-      <p>
-        Game & Tech Insider delivers cutting-edge news, honest reviews, and fresh updates on gaming consoles,
-        tech gadgets, and release calendars. We're here to keep gamers and tech lovers in the loop.
-      </p>
-    </section>
+    <p>&copy; 2025 Game & Tech Insider. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript Section -->
   <script>
-  // Mobile Dropdown Menu Toggle
-  document.querySelectorAll('.main-menu > li > a').forEach(link => {
-    link.addEventListener('click', function (e) {
-      const parent = this.parentElement;
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        parent.classList.toggle('active');
-      }
-    });
-  });
+    // Carousel Script
+    const carouselImages = document.querySelectorAll('.carousel img');
+    let currentIndex = 0;
 
-  // Countdown Timer for a release (e.g., Dec 1, 2025)
-  const releaseDate = new Date('2025-12-01T00:00:00');
-  const countdownEl = document.getElementById('countdown');
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = releaseDate - now;
-
-    if (diff <= 0) {
-      countdownEl.textContent = 'Released!';
-      return;
+    function showSlide(index) {
+      carouselImages.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % carouselImages.length;
+      showSlide(currentIndex);
+    }
 
-    countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s until release!`;
-  }
+    showSlide(currentIndex);
+    setInterval(nextSlide, 3000); // change every 3 seconds
 
-  updateCountdown(); // Run once immediately
-  setInterval(updateCountdown, 1000); // Update every second
-</script>
+    // Search Filter Script
+    const searchInput = document.getElementById('searchInput');
+    const features = document.querySelectorAll('.feature');
+
+    searchInput.addEventListener('input', function () {
+      const query = searchInput.value.toLowerCase();
+      features.forEach(feature => {
+        const title = feature.querySelector('h3').textContent.toLowerCase();
+        feature.style.display = title.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>
