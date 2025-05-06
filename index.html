@@ -67,7 +67,6 @@
         <img src="https://placehold.co/400x200?text=Release+Radar" alt="Release Radar">
         <h3>Release Radar</h3>
         <p>Be the first to know about upcoming game and device releases with our exclusive scoops.</p>
-        <div id="release-countdown" style="font-weight: bold; margin-top: 10px;"></div>
       </article>
     </section>
 
@@ -89,25 +88,23 @@
   </footer>
 
   <script>
-    // Carousel Script
+    // ===== Carousel Script =====
     const carouselImages = document.querySelectorAll('.carousel img');
     let currentIndex = 0;
+    const totalImages = carouselImages.length;
 
-    function showSlide(index) {
-      carouselImages.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-      });
+    function showNextImage() {
+      carouselImages[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % totalImages;
+      carouselImages[currentIndex].classList.add('active');
     }
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % carouselImages.length;
-      showSlide(currentIndex);
-    }
+    // Initialize first image
+    carouselImages[currentIndex].classList.add('active');
+    // Cycle every 3 seconds
+    setInterval(showNextImage, 3000);
 
-    showSlide(currentIndex);
-    setInterval(nextSlide, 3000); // change every 3 seconds
-
-    // Search Filter Script
+    // ===== Search Filter Script =====
     const searchInput = document.getElementById('searchInput');
     const features = document.querySelectorAll('.feature');
 
@@ -118,30 +115,27 @@
         feature.style.display = title.includes(query) ? 'block' : 'none';
       });
     });
-  </script>
-  
-  <!-- JavaScript Section -->
-  <script>
-    // Mobile Dropdown Menu Toggle
-    document.querySelectorAll('.main-menu > li > a').forEach(link => {
+
+    // ===== Mobile Dropdown Menu Toggle =====
+    document.querySelectorAll('nav ul li > a').forEach(link => {
       link.addEventListener('click', function (e) {
         const parent = this.parentElement;
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 768 && parent.classList.contains('dropdown')) {
           e.preventDefault();
           parent.classList.toggle('active');
         }
       });
     });
 
-    // Countdown Timer for a release (e.g., Dec 1, 2025)
+    // ===== Countdown Timer =====
     const releaseDate = new Date('2025-12-01T00:00:00');
-    const countdownEl = document.getElementById('release-countdown');
+    const countdownEl = document.getElementById('countdown');
 
     function updateCountdown() {
       const now = new Date();
       const diff = releaseDate - now;
 
-      if (!countdownEl) return;
+      if (!countdownEl) return; // Safeguard
 
       if (diff <= 0) {
         countdownEl.textContent = 'Released!';
@@ -156,8 +150,8 @@
       countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s until release!`;
     }
 
-    updateCountdown(); // Run once immediately
-    setInterval(updateCountdown, 1000); // Update every second
+    updateCountdown(); // Run once
+    setInterval(updateCountdown, 1000);
   </script>
 
 </body>
