@@ -1,44 +1,55 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Game & Tech Insider | Gaming Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game & Tech Insider</title>
   <link rel="stylesheet" href="styles.css">
-   <header>
-      <h1 style="color: white;">Game & Tech Insider</h1>
+</head>
+
+<body>
+  <header>
+    <h1 style="color: white;">Game & Tech Insider</h1>
     <p>Your ultimate source for gaming and technology news</p>
   </header>
-
+  
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="games.html">Games</a></li>
-      <li><a href="review.html">Reviews</a></li>
-      <li><a href="tech.html">Tech</a></li>
-      <li><a href="consoles.html">Console</a></li>
-
-      <!-- Dropdown Menu -->
+       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
-        <a href="#">Categories</a>
-        <div class="dropdown-content">
-          <a href="games.html">Gaming</a>
-          <a href="tech.html">Tech Gadgets</a>
-          <a href="consoles.html">Consoles</a>
-        </div>
+        <a href="games.html">Games</a>
+        <ul class="dropdown-content">
+          <li><a href="#">PC Games</a></li>
+          <li><a href="#">Mobile Games</a></li>
+          <li><a href="#">eSports</a></li>
+        </ul>
+      </li>
+      <li><a href="review.html">Reviews</a></li>
+      <li class="dropdown">
+        <a href="tech.html">Tech</a>
+        <ul class="dropdown-content">
+          <li><a href="#">Gadgets</a></li>
+          <li><a href="#">Software</a></li>
+          <li><a href="#">AI & Robotics</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="consoles.html">Consoles</a>
+        <ul class="dropdown-content">
+          <li><a href="#">PlayStation</a></li>
+          <li><a href="#">Xbox</a></li>
+          <li><a href="#">Nintendo</a></li>
+        </ul>
       </li>
     </ul>
   </nav>
-
+  
   <main>
-
-    <!-- Search Bar -->
+     <!-- Search Bar -->
     <section class="search-section">
       <input type="text" id="searchInput" placeholder="Search articles..." />
     </section>
-
-  <main class="content">
+      <main class="content">
     <a href="index.html" class="back-home">← Back to Homepage</a>
     
     <div class="page-header">
