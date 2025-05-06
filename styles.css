@@ -261,6 +261,7 @@ main {
   max-width: 600px;
   height: 300px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .carousel img {
