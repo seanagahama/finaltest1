@@ -67,6 +67,7 @@
         <img src="https://placehold.co/400x200?text=Release+Radar" alt="Release Radar">
         <h3>Release Radar</h3>
         <p>Be the first to know about upcoming game and device releases with our exclusive scoops.</p>
+        <div id="release-countdown" style="font-weight: bold; margin-top: 10px;"></div>
       </article>
     </section>
 
@@ -119,43 +120,45 @@
     });
   </script>
   
- <!-- JavaScript Section -->
+  <!-- JavaScript Section -->
   <script>
-  // Mobile Dropdown Menu Toggle
-  document.querySelectorAll('.main-menu > li > a').forEach(link => {
-    link.addEventListener('click', function (e) {
-      const parent = this.parentElement;
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        parent.classList.toggle('active');
-      }
+    // Mobile Dropdown Menu Toggle
+    document.querySelectorAll('.main-menu > li > a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const parent = this.parentElement;
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          parent.classList.toggle('active');
+        }
+      });
     });
-  });
 
-  // Countdown Timer for a release (e.g., Dec 1, 2025)
-  const releaseDate = new Date('2025-12-01T00:00:00');
-  const countdownEl = document.getElementById('countdown');
+    // Countdown Timer for a release (e.g., Dec 1, 2025)
+    const releaseDate = new Date('2025-12-01T00:00:00');
+    const countdownEl = document.getElementById('release-countdown');
 
-  function updateCountdown() {
-    const now = new Date();
-    const diff = releaseDate - now;
+    function updateCountdown() {
+      const now = new Date();
+      const diff = releaseDate - now;
 
-    if (diff <= 0) {
-      countdownEl.textContent = 'Released!';
-      return;
+      if (!countdownEl) return;
+
+      if (diff <= 0) {
+        countdownEl.textContent = 'Released!';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s until release!`;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s until release!`;
-  }
-
-  updateCountdown(); // Run once immediately
-  setInterval(updateCountdown, 1000); // Update every second
-</script>
+    updateCountdown(); // Run once immediately
+    setInterval(updateCountdown, 1000); // Update every second
+  </script>
 
 </body>
 </html>
